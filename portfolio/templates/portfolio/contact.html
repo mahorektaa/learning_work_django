@@ -1,0 +1,38 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="col">
+  <div class="container my-3">
+    <h3>Contact Admin</h3>
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+            <label  class="form-label" >Name</label> 
+            <input type="name" class="form-control" id="name" name="name" placeholder="Your Name">
+          </div>
+        <div class="form-group">
+            <label  class="form-label" >Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+            <small id="emailhelp" class="form-text text-muted">We'll never share Your email with anyone else.</small>
+    
+          </div>
+          <div class="form-group">
+            <label  class="form-label" >Message</label>
+            <textarea class="form-control" name="content" id="content"  rows="3" placeholder="Type here"></textarea>
+          </div>
+    
+          <button type="submit" class="btn btn-primary mb-3">Submit</button>
+       </form>
+
+</div>
+
+
+
+
+</div>
+
+
+
+ 
+{% endblock %}

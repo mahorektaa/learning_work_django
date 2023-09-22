@@ -1,0 +1,72 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- <h2 align="center">Strangers Thoughts</h2> -->
+<div class="row my-5" >
+  <div class="col" class="my-5">
+    <img src="{% static 'portfolio/friends-cafe.webp'%}" height="500px" weight="200px" justify-content="left">
+
+  </div>
+  <div class="col">
+    <div  style="font-family: 'Pacifico', cursive;" id="about-me" class="section">
+      <h2>About Me</h2>
+      <p>
+        Namaste! I'm Admin, and this is my little corner of the internet—Stranger Thoughts. I'm a coding enthusiast who loves to connect with folks, soak in the beauty of nature, and dabble in some creative poetry.
+    </p>
+    <p>
+        My journey with code began out of sheer curiosity, and it's become my way of bringing ideas to life. I thrive on challenges and enjoy turning them into exciting projects.
+    </p>
+    <p>
+        When I'm not in front of my computer, I'm often out exploring the great outdoors, finding inspiration in the world around me. Those experiences often find their way into my poems, where I express my thoughts and emotions.
+    </p>
+    <p>
+        Stranger Thoughts isn't just a portfolio; it's a canvas where I showcase my work and share my stories. I believe that technology and creativity go hand in hand, and you'll see that in my projects.
+    </p>
+    <p>
+        Join me on this journey where code, conversations, nature, and poetry come together. Let's explore the world of Stranger Thoughts and unleash our creativity together.
+    </p>
+  </div>
+  
+
+  </div>
+</div>
+ <div class="container">
+    
+  <h2 class="mt-5" >Work I have Done</h2>
+  <hr>
+  <div class="row">
+    {% for project in projects %}
+    <div class="col-lg-4 col-md-6">
+  
+      {% if project.url %}
+      <a href="{{ project.url }}">
+        <img src="{{ project.image.url }}" class="img-fluid mb-2">
+      </a>
+      {% else %}
+  
+      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+      {% endif %}
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+  
+    </div>
+    {% endfor %}
+  </div>
+
+ </div>
+
+ 
+<div class="canvas">
+  <h2 class="mt-5">Skills</h2>
+</div>
+
+
+
+ {% endblock content %}
+  
+
+<!-- shows information here about admin page
+ -->
+
+ 
